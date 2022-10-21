@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Sistema de Pagos | Usuarios</title>
+</head>
+
+<body>
+
+    <header class="contenedor">
+        <nav class="nav">
+            <div class="nav-container">
+                <h4><a href="index.html">SISTEMA DE PAGOS</a></h4>
+            </div>
+            <div class="">
+                <div id="header-enlaces" class="nav-enlace">
+                  <a class="enlace" id="cerrar-sesion" href="#">Cerrar sesion</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <div class="contenedor_table">
+                <div class="contenedor text-center">
+                    <h1>Listado de Usuarios</h1>
+                </div>
+                <div>
+                    <button>
+                        <a href="#modal_add_user">Nuevo</a>
+                    </button>
+                </div>
+                <table id="table_users" class="hover row-border" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Usuario</th>
+                            <th>Perfil</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla_resultados_users"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="modal_add_user" class="modalmask">
+            <div class="modalbox movedown">
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Crear Usuario</h2>
+                <form id="create_user">
+                    <input type="text" id="user-cedula-create" placeholder="Cedula" required>
+                    <input type="text" id="user-name-create" placeholder="User name" required>
+                    <input type="text" id="user-nombre-create" placeholder="Nombre" required>
+                    <input type="text" id="user-apellido-create" placeholder="Apellido" required>
+                    <input type="email" id="user-email-create" placeholder="Email" required>
+                    <input type="password" id="user-password-create" placeholder="Clave" required>
+                    <select id="user-perfil-create">
+                        <option value="">---- Selecciona un rol ---- </option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Residente">Residente</option>
+                    </select>
+                    <select id="user-estado-create">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal_editar_user" class="modalmask">
+            <div class="modalbox movedown">
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Editar Usuario</h2>
+                <form id="editar_user_form">
+                    <input type="hidden" id="user-id-editar">
+                    <input type="text" id="user-cedula-editar" placeholder="Cedula" required>
+                    <input type="text" id="user-name-editar" placeholder="User name" required>
+                    <input type="text" id="user-nombre-editar" placeholder="Nombre" required>
+                    <input type="text" id="user-apellido-editar" placeholder="Apellido" required>
+                    <input type="email" id="user-email-editar" placeholder="Email" required>
+                    <select id="user-perfil-editar">
+                        <option value="Administrador">Administrador</option>
+                        <option value="Residente">Residente</option>
+                    </select>
+                    <select id="user-estado-editar">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">inactivo</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./vendor/DataTables/datatables.min.js"></script>
+    <script src="./js/usuarios.js"></script>
+    <script src="./js/globales.js"></script>
+</body>
+
+</html>

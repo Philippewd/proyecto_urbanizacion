@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Sistema de Pagos | Residentes</title>
+</head>
+
+<body>
+
+    <header class="contenedor">
+        <nav class="nav">
+            <div class="nav-container">
+                <h4><a href="index.html">SISTEMA DE PAGOS</a></h4>
+            </div>
+            <div class="">
+                <div id="header-enlaces" class="nav-enlace">
+                  <a class="enlace" id="cerrar-sesion" href="#">Cerrar sesion</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+            <div class="contenedor_table">
+                <div class="contenedor text-center">
+                    <h1>Listado de Residentes</h1>
+                </div>
+                <div>
+                    <button>
+                        <a href="#modal_add_residente">Nuevo</a>
+                    </button>
+                </div>
+                <table id="table_resindentes" class="hover row-border" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Cédula dueño</th>
+                            <th>Nombre dueño</th>
+                            <th>Cédula residente</th>
+                            <th>Nommbre residente</th>
+                            <th>Télefono residente</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla_resultados_residentes"></tbody>
+                  </table>
+            </div>
+        </div>
+
+
+        <div id="modal_add_residente" class="modalmask">
+            <div class="modalbox movedown">
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Crear residente</h2>
+                <form id="create_residente">
+                    <input type="text" id="nombre_residente-create" placeholder="Nombre Residente" required>
+                    <input type="text" id="apellido_residente-create" placeholder="Apellido Residente" required>
+                    <input type="text" id="telefono_residente-create" placeholder="Telefono Residente" required>        
+                    <input type="email" id="email_residente-create" placeholder="Email Dueño" required>        
+                    <input type="text" id="cedula_duenio-create" placeholder="Cedula Dueño" required>        
+                    <input type="text" id="nombre_duenio-create" placeholder="Nombre Dueño" required>        
+                    <input type="text" id="apellido_duenio-create" placeholder="Apellido Dueño" required>        
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+
+        <div id="modal_editar_residente" class="modalmask">
+            <div class="modalbox movedown">
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Editar residente</h2>
+                <form id="editar_residente_form">
+                    <input type="hidden" id="id_residnete-editar">
+                    <input type="text" id="nombre_residente-editar" placeholder="Nombre Residente" required>
+                    <input type="text" id="apellido_residente-editar" placeholder="Apellido Residente" required>
+                    <input type="text" id="telefono_residente-editar" placeholder="Telefono Residente" required>        
+                    <input type="text" id="email_residente-editar" placeholder="Email Residente" required>        
+                    <input type="text" id="cedula_duenio-editar" placeholder="Cedula Dueño" required>        
+                    <input type="text" id="nombre_duenio-editar" placeholder="Nombre dueño" required> 
+                    <input type="text" id="apellido_duenio-editar" placeholder="Apellido Dueño" required> 
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./vendor/DataTables/datatables.min.js"></script>
+    <script src="./js/resindentes.js"></script>
+    <script src="./js/globales.js"></script>
+</body>
+
+</html>
